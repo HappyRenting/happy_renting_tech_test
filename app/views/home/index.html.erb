@@ -1,1 +1,96 @@
-<%= render("shared/page_header", { title: "Home" }) %>
+<%= render("shared/page_header", { title: "Test Technique — Ruby on Rails / React" }) %>
+
+<div class="space-y-6">
+  <section class="bg-white rounded-2xl p-6 shadow-md">
+    <h2 class="text-xl font-semibold mb-2">🎯 Objectif du test</h2>
+
+    <p class="">Ce test a pour but d’évaluer votre capacité à :</p>
+
+    <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+      <li class="bg-sky-200 p-3 rounded">Lire et comprendre une codebase existante</li>
+      <li class="bg-sky-200 p-3 rounded">S’adapter à Rails + React + Vite + Formik + Yup</li>
+      <li class="bg-sky-200 p-3 rounded">Respecter les conventions et patterns</li>
+      <li class="bg-sky-200 p-3 rounded">Utiliser les composants existants</li>
+    </ul>
+  </section>
+
+  <section class="bg-white rounded-2xl p-6 shadow-md">
+    <h2 class="text-xl font-semibold mb-3">🧪 Mission A (Obligatoire) — Ajouter un modèle “Project” avec CRUD</h2>
+
+    <div class="grid gap-4">
+      <div class="p-4 bg-sky-200 rounded-lg">
+        <h3 class="font-medium">Description fonctionnelle</h3>
+        <ul class="mt-2 list-disc list-inside space-y-1">
+          <li>Un <code class="bg-slate-700/50 px-1 rounded">Project</code> appartient à un <code class="bg-slate-700/50 px-1 rounded">User</code> (<code>belongs_to :user</code>).</li>
+          <li>Attributs minimum : <code>title</code>, <code>description</code>, <code>user_id</code>.</li>
+          <li>CRUD frontend en React : liste, détail, création/édition (Formik + Yup), suppression.</li>
+          <li>API : controllers et serializers cohérents avec l'existant.</li>
+          <li>Réutiliser composants, hooks et patterns déjà présents.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 bg-sky-200 rounded-lg">
+        <h3 class="font-medium">🔍 Points évalués</h3>
+        <p class="mt-2">Cohérence avec l’existant, qualité du code Ruby & React, structure des fichiers, utilisation de Formik & Yup, clarté du JSON via serializers.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-white rounded-2xl p-6 shadow-md">
+    <h2 class="text-xl font-semibold mb-3">⭐ Mission B (Bonus) — Filtre de recherche sur les Users</h2>
+
+    <div class="space-y-2">
+      <p>Ajoutez un champ de recherche par email dans la liste des Users.</p>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="bg-sky-500 p-3 rounded">
+          <h4 class="font-medium">Backend</h4>
+
+          <ul class="mt-2 list-disc list-inside text-slate-200">
+            <li>Ajouter le paramètre <code>q</code> pour filtrer les users par email (recherche partielle)</li>
+            <li>Maintenir un serializer propre</li>
+          </ul>
+        </div>
+
+        <div class="bg-sky-500 p-3 rounded">
+          <h4 class="font-medium">Frontend</h4>
+
+          <ul class="mt-2 list-disc list-inside text-slate-200">
+            <li>Champ de recherche réutilisant les composants</li>
+            <li>Validation simple avec Yup</li>
+            <li>Afficher résultats filtrés (bonus : debounce)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sky-200 rounded-2xl p-6 shadow-md">
+    <h2 class="text-xl font-semibold mb-3">🛠️ Conseils (avec RSpec)</h2>
+
+    <ul class="list-disc list-inside space-y-2">
+      <li>Lire le code existant avant de coder.</li>
+      <li>Inspirez-vous du CRUD User pour structurer Projects.</li>
+      <li>Réutilisez les composants front existants.</li>
+      <li><strong>Ajouter des tests RSpec</strong> si possible :
+        <ul class="list-decimal list-inside ml-4 mt-2">
+          <li>Specs de modèle (validations, associations)</li>
+          <li>Specs de controller (statuts HTTP, réponses JSON)</li>
+          <li>Tests d'intégration simples (create/update/delete)</li>
+        </ul>
+      </li>
+      <li>N'ajoutez services / decorators que si cela reste cohérent avec l'existant.</li>
+    </ul>
+  </section>
+
+  <section class="bg-sky-200 rounded-2xl p-6 shadow-md">
+    <h2 class="text-xl font-semibold mb-3">📦 Rendu attendu</h2>
+
+    <ul class="list-disc list-inside">
+      <li>Lien vers un repository contenant la solution</li>
+      <li>Quelques lignes expliquant les choix techniques</li>
+      <li>Optionnel : points d'amélioration avec plus de temps</li>
+    </ul>
+  </section>
+</div>
