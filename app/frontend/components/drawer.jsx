@@ -54,7 +54,7 @@ const Drawer = ({ title, reload = false, children }) => {
                   </div>
                 </div>
                 <div className="relative mt-4 flex-1 px-4 sm:px-6">
-                  {children}
+                  {children(onClose)}
                 </div>
               </div>
             </DialogPanel>

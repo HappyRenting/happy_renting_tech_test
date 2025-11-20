@@ -2,15 +2,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import { headers } from './utils'
 
-const formatParams = data => ({
-  user: {
-    first_name: data.first_name,
-    last_name: data.last_name,
-    email: data.email,
-    phone: data.phone,
-    role: data.role
-  }
-})
+const formatParams = data => ({ user: { ...data } })
 
 const getUsers = () => axios.get('/api/web/users.json', { headers } )
   .then(({ data }) => data).catch(() => toast.error('Oops...'))
