@@ -13,7 +13,7 @@ const User = () => {
 
   return (
     <Drawer title={full_name}>
-      <DescriptionList items={items} />
+      {() => <DescriptionList items={items} />}
     </Drawer>
   )
 }
