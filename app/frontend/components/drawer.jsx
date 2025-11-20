@@ -1,28 +1,22 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useNavigate, useRevalidator } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import PropTypes from 'prop-types'
 
-const Drawer = ({ title, reload = false, children }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const { revalidate } = useRevalidator()
+const Drawer = ({ title, children }) => {
+  const [open, setOpen] = useState(false)
   const navigate = useNavigate()
 
   const onClose = useCallback(() => {
-    setIsOpen(false)
-    setTimeout(() => {
-      navigate(-1)
-
-      if (reload)
-        revalidate()
-    }, 500)
+    setOpen(false)
+    setTimeout(() => navigate(-1), 500)
   }, [])
 
-  useEffect(() => setIsOpen(true), [])
+  useEffect(() => setOpen(true), [])
 
   return (
-    <Dialog open={isOpen} className="relative z-80" onClose={onClose}>
+    <Dialog open={open} className="relative z-80" onClose={onClose}>
       <div className="fixed inset-0 bg-neutral-900 opacity-50" />
       <div className="fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -67,7 +61,6 @@ const Drawer = ({ title, reload = false, children }) => {
 
 Drawer.propTypes = {
   children: PropTypes.node.isRequired,
-  reload: PropTypes.bool,
   title: PropTypes.string.isRequired
 }
 

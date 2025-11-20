@@ -50,7 +50,7 @@ module Api::Web
       end
     end
 
-    describe "PUT /update" do
+    describe "PUT #update" do
       let(:user) { create(:user) }
 
       before { put("/api/web/users/#{user.id}.json", params: params) }
@@ -70,6 +70,16 @@ module Api::Web
         it { expect(response.content_type).to include('application/json') }
         it { expect(response.parsed_body['errors']).to include("First name can't be blank") }
       end
+    end
+
+    describe "DELETE #destroy" do
+      let(:user) { create(:user) }
+
+      before { delete("/api/web/users/#{user.id}.json") }
+
+      it { expect(response).to have_http_status(:ok) }
+      it { expect(response.content_type).to include('application/json') }
+      it { expect(response.parsed_body['message']).to eq('User deleted successfully') }
     end
   end
 end

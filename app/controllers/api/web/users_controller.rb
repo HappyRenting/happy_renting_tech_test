@@ -1,7 +1,7 @@
 module Api
   module Web
     class UsersController < ApplicationController
-      before_action :get_user, only: [ :show, :update ]
+      before_action :get_user, only: [ :show, :update, :destroy ]
       def index
         render json: User.all
       end
@@ -23,6 +23,14 @@ module Api
       def update
         if @user.update(user_params)
           render json: @user
+        else
+          render json: { errors: @user.errors.full_messages }, status: :unprocessable_content
+        end
+      end
+
+      def destroy
+        if @user.destroy
+          render json: { message: "User deleted successfully" }, status: :ok
         else
           render json: { errors: @user.errors.full_messages }, status: :unprocessable_content
         end

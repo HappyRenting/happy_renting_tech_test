@@ -7,6 +7,7 @@ import { Button } from './button'
 import Drawer from './drawer'
 import { DescriptionList } from './descriptionList'
 import { Form, Input, Select } from './form'
+import Modal from './modal'
 
 export {
   Loader,
@@ -19,5 +20,6 @@ export {
   DescriptionList,
   Form,
   Input,
-  Select
+  Select,
+  Modal
 }

@@ -18,6 +18,12 @@ const Users = () => {
     </Link>
   )
 
+  const destroy = id => (
+    <Link to={`delete/${id}`} className="text-red-600 hover:text-red-900">
+      Delete
+    </Link>
+  )
+
   const table = [
     { name: 'Name', key: 'full_name' },
     { name: 'Email', key: 'email' },
@@ -26,7 +32,8 @@ const Users = () => {
     { name: 'Created At', key: 'created_at' },
     { name: 'Updated At', key: 'updated_at' },
     { name: '', key: 'id', action: show },
-    { name: '', key: 'id', action: edit }
+    { name: '', key: 'id', action: edit },
+    { name: '', key: 'id', action: destroy }
   ]
 
   return (

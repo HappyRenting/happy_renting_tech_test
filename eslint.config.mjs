@@ -42,7 +42,7 @@ export default [
       'indent': ['error', 2],
       'linebreak-style': ['error', 'unix'],
       'line-comment-position': 'off',
-      'max-len': ['error', { code: 110 }],
+      'max-len': ['error', { code: 110, ignorePattern: 'className="[^"]+"' }],
       'max-lines': 'off',
       'multiline-ternary': ['error', 'never'],
       'newline-per-chained-call': 'off',

@@ -16,4 +16,7 @@ const updtateUser = (id, user) => axios.put(`/api/web/users/${id}.json`, formatP
 const createUser = user => axios.post('/api/web/users.json', formatParams(user), { headers } )
   .then(() => toast.success('User created')).catch(() => toast.error('Oops...'))
 
-export { getUsers, getUser, updtateUser, createUser }
+const deleteUser = id => axios.delete(`/api/web/users/${id}.json`, { headers } )
+  .then(() => toast.success('User deleted')).catch(() => toast.error('Oops...'))
+
+export { getUsers, getUser, updtateUser, createUser, deleteUser }
