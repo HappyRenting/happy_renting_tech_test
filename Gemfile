@@ -45,7 +45,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "factory_bot_rails", "~> 6.5.0"
-  gem "faker", "~> 3.5.0"
+  gem "faker", "~> 3.5.3"
   gem "shoulda-matchers", "~> 7.0.0"
   gem "rails-controller-testing", "~> 1.0.0"
   gem "simplecov", "~> 0.22.0", require: false
