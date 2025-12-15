@@ -26,7 +26,7 @@ gem "image_processing", "~> 1.2"
 
 gem "vite_rails", "~> 3.0.0"
 gem "tailwindcss-rails",  "~> 4.4.0"
-gem "active_model_serializers", "~> 0.10.0"
+gem "active_model_serializers", "~> 0.10.16"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
