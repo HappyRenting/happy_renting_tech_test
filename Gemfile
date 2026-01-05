@@ -24,7 +24,7 @@ gem "thruster", require: false
 
 gem "image_processing", "~> 1.2"
 
-gem "vite_rails", "~> 3.0.0"
+gem "vite_rails", "~> 3.0.20"
 gem "tailwindcss-rails",  "~> 4.4.0"
 gem "active_model_serializers", "~> 0.10.0"
 
